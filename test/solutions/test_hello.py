@@ -9,14 +9,14 @@ from lib.solutions.hello import hello
 
 class TestHello(unittest.TestCase):
     def test_hello(self):
-        self.assertEqual(hello("world"), "Hello world")
+        self.assertEqual(hello("John"), "Hello, John!")
 
-    # def test_hello_return_type(self):
-    #     self.assertTrue(isinstance(hello("world"), str))
+    def test_hello_return_type(self):
+        self.assertTrue(isinstance(hello("world"), str))
 
-    # def test_hello_type_error(self):
-    	# with self.assertRaises(TypeError):
-   			# hello(9000)
+    def test_hello_type_error(self):
+    	with self.assertRaises(TypeError):
+   			hello(9000)
 
 
 if __name__ == '__main__':
