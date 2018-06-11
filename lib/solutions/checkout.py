@@ -10,7 +10,12 @@ def checkout(skus):
 		"D": 15
 	}
 
+	cart_value = 0
 	# Check basket and group items (to check for offers)
-	return False
+	for k,v in stock.items():
+		if k in skus:
+			cart_value += skus.count(k) * v
 
-checkout("AABBC")
+	return cart_value
+
+print checkout("AABBC")
