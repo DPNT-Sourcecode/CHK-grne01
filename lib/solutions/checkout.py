@@ -3,10 +3,11 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
+	illegals = ["-", ""]
 	if isinstance(skus, str):
-		cart = list(skus)
+		cart = list(skus.upper())
 	else:
-		cart = skus
+		cart = skus.upper()
 		
 	if skus is "" or isinstance(skus, int):
 		return -1
