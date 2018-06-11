@@ -3,7 +3,12 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-	if not isinstance(skus, str) or skus is "":
+	if isinstance(skus, str):
+		cart = list(skus)
+	else:
+		cart = skus
+		
+	if skus is "" or isinstance(skus, int):
 		return -1
 
 	stock = {
@@ -14,7 +19,6 @@ def checkout(skus):
 	}
 
 	cart_value = 0
-	cart = list(skus)
 	
 	# Check basket and group items (to check for offers)
 	
@@ -39,4 +43,3 @@ def checkout(skus):
 
 	return cart_value
 
-print(checkout("B"))

@@ -17,6 +17,9 @@ class TestCheckout(unittest.TestCase):
     def test_checkout_single_b(self):
         self.assertEqual(checkout("B"), 30)
 
+ 	def test_checkout_list_input(self):
+ 		self.assertEqual(checkout(["B"]), 30)
+
     def test_checkout_a_deal(self):
         self.assertEqual(checkout("AAABC"), 180)
 
