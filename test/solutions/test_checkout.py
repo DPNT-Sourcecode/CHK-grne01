@@ -11,11 +11,20 @@ class TestCheckout(unittest.TestCase):
     def test_checkout(self):
         self.assertEqual(checkout("AABC"), 150)
 
+    def test_checkout_single_a(self):
+        self.assertEqual(checkout("A"), 50)
+
+    def test_checkout_single_b(self):
+        self.assertEqual(checkout("B"), 30)
+
     def test_checkout_a_deal(self):
         self.assertEqual(checkout("AAABC"), 180)
 
     def test_checkout_b_deal(self):
         self.assertEqual(checkout("ABBC"), 115)
+
+    def test_checkout_empty_str(self):
+        self.assertEqual(checkout(""), -1)
 
     def test_checkout_illegal(self):
         self.assertEqual(checkout(15), -1)
