@@ -3,7 +3,7 @@ import string
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-	if isinstance(skus, int):
+	if isinstance(skus, int) or skus == "":
 		return -1
 
 	for punct in string.punctuation:
@@ -13,7 +13,7 @@ def checkout(skus):
 	if not isinstance(skus, str):
 		cart = list(skus.upper())
 	else:
-		cart = skus.upper()
+		cart = [sku.upper() for sku in skus]
 
 	stock = {
 		"A": 50,
@@ -47,3 +47,4 @@ def checkout(skus):
 
 	return cart_value
 
+print(checkout(["A"]))
