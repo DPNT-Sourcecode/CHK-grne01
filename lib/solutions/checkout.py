@@ -11,9 +11,9 @@ def checkout(skus):
 			return -1
 	
 	if isinstance(skus, str):
-		cart = list(skus.upper())
+		cart = list(skus)
 	else:
-		cart = [sku.upper() for sku in skus]
+		cart = skus
 
 	stock = {
 		"A": 50,
