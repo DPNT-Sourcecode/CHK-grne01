@@ -10,7 +10,7 @@ def checkout(skus):
 		if punct in skus:
 			return -1
 	
-	if not isinstance(skus, str):
+	if isinstance(skus, str):
 		cart = list(skus.upper())
 	else:
 		cart = [sku.upper() for sku in skus]
@@ -47,4 +47,3 @@ def checkout(skus):
 
 	return cart_value
 
-print(checkout(["A"]))
