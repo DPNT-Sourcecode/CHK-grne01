@@ -1,7 +1,6 @@
 import unittest
 import sys, os
 
-
 sys.path.insert(0, os.path.abspath("../.."))
 
 from lib.solutions.checkout import checkout
@@ -20,13 +19,13 @@ class TestCheckout(unittest.TestCase):
  	def test_checkout_list_input(self):
  		self.assertEqual(checkout(["B"]), 30)
 
- 	def test_lower_input(self):
+ 	def test_checkout_lower_input(self):
  		self.assertEqual(checkout("b"), -1)
 
- 	def test_mixed_input(self):
+ 	def test_checkout_mixed_input(self):
  		self.assertEqual(checkout("AbC"), -1)
 
- 	def test_punct(self):
+ 	def test_checkout_punct(self):
  		self.assertEqual(checkout("!,."), -1)
 
     def test_checkout_a_deal(self):
