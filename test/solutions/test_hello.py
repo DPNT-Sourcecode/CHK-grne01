@@ -14,10 +14,5 @@ class TestHello(unittest.TestCase):
     def test_hello_return_type(self):
         self.assertTrue(isinstance(hello("world"), str))
 
-    def test_hello_type_error(self):
-    	with self.assertRaises(TypeError):
-   			hello(9000)
-
-
 if __name__ == '__main__':
     unittest.main()
