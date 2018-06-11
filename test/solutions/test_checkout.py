@@ -17,5 +17,9 @@ class TestCheckout(unittest.TestCase):
     def test_checkout_b_deal(self):
         self.assertEqual(checkout("ABBC"), 115)
 
+    def test_checkout_illegal(self):
+        self.assertEqual(checkout(15), -1)
+
+
 if __name__ == '__main__':
     unittest.main()

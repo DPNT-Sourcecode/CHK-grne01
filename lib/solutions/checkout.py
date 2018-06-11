@@ -3,6 +3,9 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
+	if not isinstance(skus, str):
+		return -1
+
 	stock = {
 		"A": 50,
 		"B": 30,
@@ -35,5 +38,3 @@ def checkout(skus):
 				cart_value += deal_value
 
 	return cart_value
-
-print checkout("AAAADDD")
