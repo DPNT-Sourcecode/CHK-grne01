@@ -11,14 +11,12 @@ def checkout(skus):
 	}
 
 	cart_value = 0
+	cart = list(skus)
 	# Check basket and group items (to check for offers)
 	for k,v in stock.items():
 		if k in skus:
-			if k == "A" and isinstance((skus.count(k) / 3), int):
-				cart_value += 130 * (skus.count(k) / 3) 
-			else:
-				cart_value += skus.count(k) * v
+			cart_value += skus.count(k) * v
 
 	return cart_value
 
-print checkout("AAAAA")
+print checkout("AA")
