@@ -1,16 +1,19 @@
-
+import string
 
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-	illegals = ["-", ""]
-	if isinstance(skus, str):
+	if isinstance(skus, int):
+		return -1
+
+	for punct in string.punctuation:
+		if punct in skus:
+			return -1
+	
+	if not isinstance(skus, str):
 		cart = list(skus.upper())
 	else:
 		cart = skus.upper()
-		
-	if skus is "" or isinstance(skus, int):
-		return -1
 
 	stock = {
 		"A": 50,

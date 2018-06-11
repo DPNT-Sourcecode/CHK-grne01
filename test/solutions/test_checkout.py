@@ -21,7 +21,13 @@ class TestCheckout(unittest.TestCase):
  		self.assertEqual(checkout(["B"]), 30)
 
  	def test_lower_input(self):
- 		self.assertEqual(checkout(["b"]), 30)
+ 		self.assertEqual(checkout("b"), 30)
+
+ 	def test_mixed_input(self):
+ 		self.assertEqual(checkout("AbC"), 100)
+
+ 	def test_punct(self):
+ 		self.assertEqual(checkout("!,."), -1)
 
     def test_checkout_a_deal(self):
         self.assertEqual(checkout("AAABC"), 180)
